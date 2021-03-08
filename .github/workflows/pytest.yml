@@ -30,6 +30,8 @@ jobs:
         ls -a
         pip install --upgrade pytest
         make create-env
+        ls -a
+        . .mais/bin/activate
         python ./setup.py develop
     # - name: Lint with flake8
     #   run: |
