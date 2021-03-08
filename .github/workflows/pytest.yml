@@ -28,6 +28,7 @@ jobs:
       run: |
         pwd
         ls -a
+        pip install --upgrade pytest
         make create-env
         python ./setup.py develop
     # - name: Lint with flake8
