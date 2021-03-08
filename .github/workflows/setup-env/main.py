@@ -67,7 +67,7 @@ def main():
     )
     print(workspace)
 
-    ### json with information of .basedosdados/config.toml  
+    ### json with information of .basedosdados/config.toml
     config_dict = {
         "metadata_path": str(Path("/github") / "workspace" / "bases"),
         "templates_path": str(
@@ -97,8 +97,48 @@ def main():
         "################################################################################################"
     )
     ### load the secret of prod and staging data
-    prod_base64 = os.environ.get("INPUT_PROD")
-    staging_base64 = os.environ.get("INPUT_STAGING")
+    prod_base64 = """"ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAidGVzdDEzLTAx
+    IiwKICAicHJpdmF0ZV9rZXlfaWQiOiAiNTMxZjY5ZTg4ZTA1NDcxYjJhMWU4ZWVmMmU2NzVkNjE3
+    MTNlZWMzYiIsCiAgInByaXZhdGVfa2V5IjogIi0tLS0tQkVHSU4gUFJJVkFURSBLRVktLS0tLVxu
+    TUlJRXZnSUJBREFOQmdrcWhraUc5dzBCQVFFRkFBU0NCS2d3Z2dTa0FnRUFBb0lCQVFDcXJaSlJh
+    aEpmcVgzSFxuWWdxdXlLU25iVVNzTW5acWRiY0k0VlgxeGQ0eWZEV29iL0FIOGxnYjc2b2x5WG1u
+    SEkrdXQ3K0hMN0Vzb2d2clxuQTJWenNPbjRrRWRXcU5ZTGV0Rys4aWNmVllOSXQyeERFV0hPZWg2
+    TGJiRWpuWjZxaGM5aU1HWlJGL3pzSEZOelxudnhTU2doVkxESFQ2UGZHVDFNaWVIdDUyVTlxT3Fa
+    RTEwSkFHRGhFcmFoWnUxLzF5ekxvaVMvQXJGYWRHdjFQeVxuQitWTy9BU1VCMUl1VEFhVXhtZURs
+    K1cwa1ZxLzBmLzBYM1I0SVBURkpWWE14eGQ0RjBJL1J1dWhZRjh6ZlhpRFxucHJDaG82Vno0THE0
+    NjBDVzhDV0JPYzNEWnc5R09wZmJJM25HTGUvYnNTSUNVWmtEMlRJUXpQL1R2NHJLTWIyZVxuZVdN
+    QS94YW5BZ01CQUFFQ2dnRUFUWjBFam5VM3lieWZiODJMb2hPbm5HTTUrVHd4VVJRYW1iVXVpOGJn
+    MWdCWlxudmpDNDdFUXVBUFlwWDJtUklvY0FaNmt6TlZ4Z3F6VTlTaStQTU43Z1pxSGxidWp6L09C
+    ckJQUEZDcUN1UktEMFxuWUVORlFNbVRuai9SYjZxN2ZqdS9KSjF4eWFxbzN3MjZmVVlGS3VKd29H
+    SVh4N3ZuWVJ3LzVuZVBIaXZmbFVPVVxuaTRKaWJnbHVIT1hlbG1hUXVpemEvUEwxOVM0RTAxQXRF
+    MGVuUi9TQUxWMmlXZWF3YmIwbEZYT1dKeDBZU09xNFxuRnZ1RVJKVklKSHBCclByUnhQSzlMRmR1
+    Tzkxam1qYUs3amNnNitpOWh2U1Z5b2M5NUtnUzIxSUsxOFdhblQzTFxuc05hZmhraExsdzN5dDYw
+    UDR3d2tEeWN3bG4rWFM2U0Y2eGxlMXlOQmdRS0JnUURYbXQ5ZjBDU1ZoTkdvTWFRb1xuNnhMbW9E
+    bFBaM2pwdWNXbnpOd0tmTm9NWlRreW96T01aVTBVRVdrdkFhUkFPeTVNNFg5YlB0L0xtdlJnMTRK
+    ZlxuYVZuQ1ZQMUhWci96aU1aeVZuV1pVOVlNRUxQek5JYmltS2RqNzBYc1lDdzBYcVVCMXZFclM3
+    c2pIZ0lTekxKQVxueTRWb0UyWFhFMnY0b1VENjl0amtzbTdaUndLQmdRREtwOXFDM0RkWGUrTE91
+    RTRKaXAyZnJYUHRreTZRajlYelxucHp3NCtJeVdkcjFib0VDa05FVlZBUmo3K3VaZnlicWdVTkFY
+    MlRBQ1JXOTA0eWdKL2NNUW9YVExDZURWU3hLRFxuNlN6b0VTa1NGSFIzSDBMcCtpMnZQb1RDSitk
+    QTdnR1NZczNybmRMZktkN2ZtMVNMNFNmTWIzd255cmdHUlBJTlxuZWloTlg2eUhvUUtCZ1FDazRl
+    eW5zbDczOVczOHFaSDROT1hzZDJXOG9zM21PRXEvSzd5dlRKSFlYdVRpSThyOVxuT0U4ODVKL0M4
+    Z2R4azVDeC9OVlBxNEtzaTZFT0dtRzZvNitnSFN6aERLZVpEK1ZyZFZGVDQ3aFMyOGN5Vzk0M1xu
+    bGpTVkNWdzVDOGRpZVdySlFGNkpGTTVWYWRKK0hBcko0SnJ5WDd0SFFyUVVuUVU3cCtGdzdFQTNh
+    d0tCZ0U2QVxucFRHcDhyb3Q0RmNwcC9ra1BCajl6UG1MMlM3Z3VRVndrL0NSdjR3TnBSNllQbElk
+    ZVhvTE9jMXFqTkV3U040UFxuVC96ZEFpN3ZETlRmcGNQeERCNG1IU01GeVpWMlJrN1pCYTlEN24v
+    MWNvUXVsUElrR294WEVJQlJpdEJwSWl5OVxubjMwVkh2bVpzNTgxQVpSSi9PdkJoL3UyR0lFOU5m
+    S29qbklpaktmaEFvR0JBTUI0UHJmSFJFYjRhTlF6NjF0b1xub2l5d0JGZzVIakNCcUZjU0M5WlZo
+    QjBVN2pJU1ljWXEwa0VqY0FIN0ptcHhXQWIzcDRDV0ZObWVDcCswTzZSTFxuR21KNElYNUR1TnJx
+    eVNYYVJ2MTIwYWM2UzQ2elFUY3lRVC8zR05Ld3FoeGYyOFpmV2RraDJVK2xyYVV6Y2oyZ1xuQjJ5
+    ZW1uN092U1FBTzVVcVgrREZyNURaXG4tLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tXG4iLAogICJj
+    bGllbnRfZW1haWwiOiAiY2Fpby04MTdAdGVzdDEzLTAxLmlhbS5nc2VydmljZWFjY291bnQuY29t
+    IiwKICAiY2xpZW50X2lkIjogIjEwMTIzMTk3ODk0OTEzNDk2ODExOSIsCiAgImF1dGhfdXJpIjog
+    Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9vL29hdXRoMi9hdXRoIiwKICAidG9rZW5fdXJp
+    IjogImh0dHBzOi8vb2F1dGgyLmdvb2dsZWFwaXMuY29tL3Rva2VuIiwKICAiYXV0aF9wcm92aWRl
+    cl94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9j
+    ZXJ0cyIsCiAgImNsaWVudF94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMu
+    Y29tL3JvYm90L3YxL21ldGFkYXRhL3g1MDkvY2Fpby04MTclNDB0ZXN0MTMtMDEuaWFtLmdzZXJ2
+    aWNlYWNjb3VudC5jb20iCn0K"""
+    staging_base64 = prod_base64
 
     ### create config and credential folders
     create_config_tree(prod_base64, staging_base64, config_dict)
