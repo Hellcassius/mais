@@ -28,6 +28,7 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install make
+        cwd
         make create-env
         python -m setup.py develop
     # - name: Lint with flake8
