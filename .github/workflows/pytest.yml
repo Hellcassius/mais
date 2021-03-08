@@ -8,7 +8,7 @@ on:
       # - '**.py'
 jobs:
   build:
-    #builds, lint and pytest the codes
+    #builds, lint and pytest the code
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
