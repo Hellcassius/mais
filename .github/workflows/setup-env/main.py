@@ -67,7 +67,7 @@ def main():
     )
     print(workspace)
 
-    ### json with information of .basedosdados/config.toml
+    ### json with information of .basedosdados/config.toml  
     config_dict = {
         "metadata_path": str(Path("/github") / "workspace" / "bases"),
         "templates_path": str(
