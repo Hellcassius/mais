@@ -24,6 +24,10 @@ jobs:
       with: 
           PROD: ${{ secrets.PROD }}
           STAGING: ${{ secrets.STAGING }}
+    - name: Install pytest
+      run: |
+        pip install --upgrade pip
+        pip install --upgrade pytest
     # - name: Lint with flake8
     #   run: |
     #     # stop the build if there are Python syntax errors or undefined names
