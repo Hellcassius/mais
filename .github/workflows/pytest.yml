@@ -29,8 +29,8 @@ jobs:
         pwd
         ls -a
         pip install --upgrade pytest
+        pip install -r requirements-dev.txt
         make create-env
-        ls -a
         . .mais/bin/activate
         python ./setup.py develop
     # - name: Lint with flake8
