@@ -26,9 +26,8 @@ jobs:
           STAGING: ${{ secrets.STAGING }}
     - name: Build env
       run: |
-        pip install --upgrade pip
-        pip install make
         pwd
+        ls -a
         make create-env
         python -m setup.py develop
     # - name: Lint with flake8
