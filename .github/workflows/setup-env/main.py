@@ -31,7 +31,7 @@ def save_json(json_obj, file_path, file_name):
 
 def create_json_file(message_base64, file_name, config_folder):
     ### decode base64 script and load as a json object
-    json_obj = json.loads(decogind_base64(message_base64))
+    json_obj = json.loads(decoding_base64(message_base64))
     prod_file_path = Path.home() / config_folder / "credentials"
     ### save the json credential in the .basedosdados/credentials/
     save_json(json_obj, prod_file_path, file_name)
