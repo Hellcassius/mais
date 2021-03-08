@@ -60,7 +60,7 @@ def main():
     # print(os.environ.get("INPUT_PROJECT_ID"))
     print(Path.home())
 
-    workspace = Path(".")
+    workspace = Path(".").resolve()
 
     print(
         "########################  WORKSPACE   #########################################"
