@@ -57,7 +57,7 @@ def create_config_tree(prod_base64, staging_base64, config_dict):
 
 def main():
     # print(json.load(Path("/github/workspace/files.json").open("r")))
-    print(os.environ.get("INPUT_PROJECT_ID"))
+    # print(os.environ.get("INPUT_PROJECT_ID"))
     print(Path.home())
 
     workspace = Path(".")
@@ -73,16 +73,16 @@ def main():
         "templates_path": str(
             Path("/github") / "workspace" / "basedosdados" / "configs" / "templates"
         ),
-        "bucket_name": "basedosdados-dev",
+        "bucket_name": "test13-01-bucket",
         "gcloud-projects": {
             "staging": {
-                "name": "basedosdados-dev",
+                "name": "test13-01",
                 "credentials_path": str(
                     Path.home() / ".basedosdados" / "credentials" / "staging.json"
                 ),
             },
             "prod": {
-                "name": "basedosdados-dev",
+                "name": "test13-01",
                 "credentials_path": str(
                     Path.home() / ".basedosdados" / "credentials" / "prod.json"
                 ),
@@ -96,12 +96,12 @@ def main():
     print(
         "################################################################################################"
     )
-    # ### load the secret of prod and staging data
-    # prod_base64 = os.environ.get("INPUT_GCP_TABLE_APPROVE_PROD")
-    # staging_base64 = os.environ.get("INPUT_GCP_TABLE_APPROVE_STAGING")
+    ### load the secret of prod and staging data
+    prod_base64 = os.environ.get("INPUT_PROD")
+    staging_base64 = os.environ.get("INPUT_STAGING")
 
-    # ### create config and credential folders
-    # create_config_tree(prod_base64, staging_base64, config_dict)
+    ### create config and credential folders
+    create_config_tree(prod_base64, staging_base64, config_dict)
 
 
 if __name__ == "__main__":

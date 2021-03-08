@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.x
@@ -21,9 +21,9 @@ jobs:
         python-version: '3.x'
     - name: Create Environment
       uses: ./.github/workflows/setup-env
-      # with: 
-      #     GCP_TABLE_APPROVE_PROD: ${{ secrets.GCP_TABLE_APPROVE_PROD }}
-      #     GCP_TABLE_APPROVE_STAGING: ${{ secrets.GCP_TABLE_APPROVE_STAGING }}
+      with: 
+          PROD: ${{ secrets.PROD }}
+          STAGING: ${{ secrets.STAGING }}
     # - name: Lint with flake8
     #   run: |
     #     # stop the build if there are Python syntax errors or undefined names
@@ -32,4 +32,4 @@ jobs:
     #     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     # - name: Test with pytest
     #   run: |
-    #     pytest 
+    #     pytest tests
